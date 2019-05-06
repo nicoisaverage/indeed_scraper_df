@@ -135,6 +135,7 @@ if __name__ == "__main__":
 # df = indeed_main(num_pages, query, location)
 # r = requests.get('http://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0APcB5PE-vv4rq4lRUqBNRHh1T4fx-TP46vPzjjAkJXVvoBD-gi4c-kGVZQzThWHI6n0_w2OMzteHCVYtHEbelLOQdXYkf2euxcg9_CESWNP5oERiR9lpwbVZ_eKkv1MJZMoY0Zqy_U4U_VSM43YQkggwwCXZ5Ht0Rw4wQF9Dwtgs28OAS4l5B87o9A9TAOVIkrsR2hw4Ql6dpyAPTcntnRFrXWmP-60Kk52B4QNxneGv3t_rzDRVbFle5EbjoNgVDT-NmxbdJdFy60XhzbL6KwXYowGaGadKY6KZzzeVKXPyEJAtB0DbU6GSBfijSpVnCu67wUuDzzXzoP2kg-MQPaXRUAozpBtbu0ofxqZXX8S3uipEPkJXAnps1WFC9kth5YJ3kVcybQ77bdzMesMLEa1w38BoajS2IknFy0-ZS26A==&vjs=3&p=1&fvj=1')
 # r.url
-# df.head(200)
+# df.head(10)
 # df.drop_duplicates()
 # search terms
+# Boo-Yah
