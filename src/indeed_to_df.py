@@ -97,7 +97,7 @@ def list_page_soups(num_pages, query, location):
         soups.append(soup)
     return soups
 
-def main(num_pages, query, search_location):
+def indeed_main(num_pages, query, search_location):
     soups = list_page_soups(num_pages, query, search_location)
     all_jobs = []
     for soup in soups:
@@ -115,6 +115,7 @@ def main(num_pages, query, search_location):
         all_jobs.append(json_data)
     flat_list = [item for sublist in all_jobs for item in sublist]
     main_df = pd.DataFrame(flat_list)
+    main_df['source'] = 'Indeed'
     return main_df
 
 if __name__ == "__main__":
@@ -123,16 +124,17 @@ if __name__ == "__main__":
     query = "tech"
     location = "Chicago, IL"
 
-    df = main(num_pages, query, location)
+    df = indeed_main(num_pages, query, location)
 
     df.to_csv('indeed_jobs.csv')
 
-num_pages = '' #num of pages you want 
-query = '' #position you want to search 
-location = '' #location you want to search 
+# num_pages = '' #num of pages you want 
+# query = '' #position you want to search 
+# location = '' #location you want to search 
 
-df = main(num_pages, query, location)
-r = requests.get('http://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0APcB5PE-vv4rq4lRUqBNRHh1T4fx-TP46vPzjjAkJXVvoBD-gi4c-kGVZQzThWHI6n0_w2OMzteHCVYtHEbelLOQdXYkf2euxcg9_CESWNP5oERiR9lpwbVZ_eKkv1MJZMoY0Zqy_U4U_VSM43YQkggwwCXZ5Ht0Rw4wQF9Dwtgs28OAS4l5B87o9A9TAOVIkrsR2hw4Ql6dpyAPTcntnRFrXWmP-60Kk52B4QNxneGv3t_rzDRVbFle5EbjoNgVDT-NmxbdJdFy60XhzbL6KwXYowGaGadKY6KZzzeVKXPyEJAtB0DbU6GSBfijSpVnCu67wUuDzzXzoP2kg-MQPaXRUAozpBtbu0ofxqZXX8S3uipEPkJXAnps1WFC9kth5YJ3kVcybQ77bdzMesMLEa1w38BoajS2IknFy0-ZS26A==&vjs=3&p=1&fvj=1')
-r.url
-df.head(200)
-df.drop_duplicates()
+# df = indeed_main(num_pages, query, location)
+# r = requests.get('http://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0APcB5PE-vv4rq4lRUqBNRHh1T4fx-TP46vPzjjAkJXVvoBD-gi4c-kGVZQzThWHI6n0_w2OMzteHCVYtHEbelLOQdXYkf2euxcg9_CESWNP5oERiR9lpwbVZ_eKkv1MJZMoY0Zqy_U4U_VSM43YQkggwwCXZ5Ht0Rw4wQF9Dwtgs28OAS4l5B87o9A9TAOVIkrsR2hw4Ql6dpyAPTcntnRFrXWmP-60Kk52B4QNxneGv3t_rzDRVbFle5EbjoNgVDT-NmxbdJdFy60XhzbL6KwXYowGaGadKY6KZzzeVKXPyEJAtB0DbU6GSBfijSpVnCu67wUuDzzXzoP2kg-MQPaXRUAozpBtbu0ofxqZXX8S3uipEPkJXAnps1WFC9kth5YJ3kVcybQ77bdzMesMLEa1w38BoajS2IknFy0-ZS26A==&vjs=3&p=1&fvj=1')
+# r.url
+# df.head(200)
+# df.drop_duplicates()
+# search terms
