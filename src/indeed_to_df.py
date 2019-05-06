@@ -5,7 +5,7 @@ import pandas as pd
 import json
 from datetime import datetime
 from time import time
-#lol
+
 def extract_job_titles(soup):
     jobs = []
     for div in soup.find_all(name='div', attrs={"class":"row"}):
