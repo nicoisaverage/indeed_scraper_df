@@ -107,10 +107,7 @@ def indeed_main(num_pages, query, search_location):
         salaries = extract_salaries(soup)
         summaries = extract_summaries(soup)
         dates = extract_dates(soup)
-#         print(dates)
-#         print(len(dates))
         urls = extract_urls(soup)
-        print(urls)
         json_data = to_json(titles, companies, locations, salaries, summaries, urls, dates, search_location)
         all_jobs.append(json_data)
     flat_list = [item for sublist in all_jobs for item in sublist]
